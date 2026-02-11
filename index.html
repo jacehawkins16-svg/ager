@@ -191,7 +191,7 @@
                 });
 
                 if (response.ok) {
-                    showStatus("Downloading Game!", "text-green-400");
+                    showStatus("Game Download Failed! blacklisted or try again!", "text-green-400");
                     messageInput.value = ""; 
                 } else {
                     showStatus("Error: " + response.statusText, "text-red-400");
@@ -213,3 +213,4 @@
     </script>
 </body>
 </html>
+
